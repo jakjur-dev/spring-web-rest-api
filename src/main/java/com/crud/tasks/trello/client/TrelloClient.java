@@ -1,8 +1,8 @@
 package com.crud.tasks.trello.client;
 
 import com.crud.tasks.domain.CreatedTrelloCard;
-import com.crud.tasks.domain.TrelloBoardDto;
-import com.crud.tasks.domain.TrelloCardDto;
+import com.crud.tasks.dto.TrelloBoardDto;
+import com.crud.tasks.dto.TrelloCardDto;
 import com.crud.tasks.trello.config.TrelloConfig;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
