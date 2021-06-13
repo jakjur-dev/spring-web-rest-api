@@ -24,7 +24,7 @@ public class EmailScheduler {
         String message = "Currently in database you got no tasks";
 
         if (size > 1) {
-            message = "Currently in database you got: " + size + " task";
+            message = "Currently in database you got: " + size + " tasks";
         } else if (size == 1) {
             message = "Currently in database you got: " + size + " task";
         }
