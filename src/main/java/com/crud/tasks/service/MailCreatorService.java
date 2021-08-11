@@ -27,7 +27,6 @@ public class MailCreatorService {
         context.setVariable("tasks_url", "http://localhost:8888/crud");
         context.setVariable("button", "Visit website");
         context.setVariable("admin_name", adminConfig.getAdminName());
-
         context.setVariable("preview_message", "Trello card created!");
         context.setVariable("goodbye_message", "Good luck in completing the task! ");
         context.setVariable("company_details", companyConfig.getCompanyDetails());
