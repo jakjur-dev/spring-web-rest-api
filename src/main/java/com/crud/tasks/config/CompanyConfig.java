@@ -16,6 +16,6 @@ public class CompanyConfig {
     private String companyphone;
 
     public String getCompanyDetails() {
-        return companyName + "\n Email: " + companyEmail + "\n Phone: " + companyphone;
+        return companyName + " - Email: " + companyEmail + " Phone: " + companyphone;
     }
 }
