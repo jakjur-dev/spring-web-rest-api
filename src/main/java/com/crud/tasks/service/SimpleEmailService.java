@@ -31,20 +31,16 @@ public class SimpleEmailService {
         }
     }
 
-    private SimpleMailMessage createMailMessage(final Mail mail) {
-        SimpleMailMessage mailMessage = new SimpleMailMessage();
-        mailMessage.setTo(mail.getMailTo());
-        mailMessage.setSubject(mail.getSubject());
-        mailMessage.setText(mailCreatorService.buildTrelloCardEmail(mail.getMessage()));
-        return mailMessage;
-    }
-
     private MimeMessagePreparator createMimeMessage(final Mail mail) {
         return mimeMessage -> {
             MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);
             messageHelper.setTo(mail.getMailTo());
             messageHelper.setSubject(mail.getSubject());
-            messageHelper.setText(mailCreatorService.buildTrelloCardEmail(mail.getMessage()), true);
+            if(mail.getSubject().equals("Tasks: Once a day email")) {
+                messageHelper.setText(mailCreatorService.buildScheduledMail(mail.getMessage()), true);
+            } else {
+                messageHelper.setText(mailCreatorService.buildTrelloCardEmail(mail.getMessage()), true);
+            }
         };
     }
 }
